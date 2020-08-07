@@ -108,7 +108,7 @@ const MainScreen = ({ navigation }) => {
                         </DropdownRow>
 
                         <View style={flatListView}>
-                            <ScrollView >
+                            <ScrollView scrollEnabled={false}>
 
                                 {!!data ? (<FlatList
                                     ref={RefSportCards}

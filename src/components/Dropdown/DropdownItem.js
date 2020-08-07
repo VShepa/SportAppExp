@@ -1,13 +1,13 @@
 import React, { useCallback, memo, } from 'react';
 import { Text, } from 'react-native';
-import DropDownPicker from 'react-native-dropdown-picker';
+import DropDownPicker from './DropDownPicker';
 import PropTypes from 'prop-types';
 
 const DropdownItem = ({ data, derivedProp, placeholder, searchablePlaceholder, setValue }) => {
 
-     const getData = derivedProp => {
+    const getData = derivedProp => {
         let items = []
-      
+
         if (derivedProp === 'activity') {
             items = data.reduce((acc, item) => {
                 const names = item[derivedProp].map(act => act['title'])
@@ -48,7 +48,7 @@ const DropdownItem = ({ data, derivedProp, placeholder, searchablePlaceholder, s
                 searchablePlaceholder={searchablePlaceholder}
                 placeholder={placeholder}
                 dropDownStyle={{ backgroundColor: '#fafafa', }}
-
+                isVisible={false}
                 zIndex={derivedProp === 'activity' ? 1 : 10}
                 onChangeItem={item => setValue(item.value)}
             />
