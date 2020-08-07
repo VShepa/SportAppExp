@@ -21,7 +21,7 @@ const Preloader = ({ loading }) => {
 const styles = StyleSheet.create({
     activityIndicatorWrapper: {
         position: 'absolute',
-        backgroundColor: '#fff',
+        backgroundColor: '#ecf0f1',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',

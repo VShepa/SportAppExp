@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useReducer, useRef } from "react";
+import React, { useState, useEffect, useReducer, useRef, useCallback } from "react";
 import { View, Text, StyleSheet, FlatList, useWindowDimensions } from 'react-native';
 import * as axios from 'axios';
 
@@ -117,6 +117,7 @@ const MainScreen = ({ navigation }) => {
                                     initialNumToRender={5}
                                     keyExtractor={(item, index) => index.toString()}
                                     style={{ marginVertical: height > width ? 40 : 15, alignSelf: 'center' }}
+                                    contentContainerStyle={{alignItems:'center'}}
                                     decelerationRate="fast"
                                     snapToAlignment="center"
                                     showsHorizontalScrollIndicator={false}
@@ -143,7 +144,7 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#fff'
+        backgroundColor: '#ecf0f1'
     },
     sub: {
         flex: 1, alignSelf: 'stretch'

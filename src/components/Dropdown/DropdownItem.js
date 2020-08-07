@@ -1,13 +1,13 @@
-import React, { memo } from 'react';
+import React, { useCallback, memo, } from 'react';
 import { Text, } from 'react-native';
 import DropDownPicker from 'react-native-dropdown-picker';
 import PropTypes from 'prop-types';
 
 const DropdownItem = ({ data, derivedProp, placeholder, searchablePlaceholder, setValue }) => {
 
-    const getData = derivedProp => {
+     const getData = derivedProp => {
         let items = []
-
+      
         if (derivedProp === 'activity') {
             items = data.reduce((acc, item) => {
                 const names = item[derivedProp].map(act => act['title'])
